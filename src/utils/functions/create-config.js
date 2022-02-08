@@ -3,8 +3,6 @@ import { GATEWAY_URL } from '../constants';
 export default function () {
     let gatewayURL = GATEWAY_URL;
     let clientId = 0;
-
-    let responseSuccessCb = () => {};
     let responseErrorCb = () => {};
 
     const getGatewayURL = () => {
@@ -23,8 +21,8 @@ export default function () {
         clientId = id;
     };
 
-    const setResponseSuccessCb = cb => {
-        responseSuccessCb = cb;
+    const handleErrorResponse = (...args) => {
+        return responseErrorCb(...args);
     };
 
     const setResponseErrorCb = cb => {
@@ -36,7 +34,7 @@ export default function () {
         setGatewayURL,
         getClientId,
         setClientId,
-        setResponseSuccessCb,
+        handleErrorResponse,
         setResponseErrorCb
     });
 }

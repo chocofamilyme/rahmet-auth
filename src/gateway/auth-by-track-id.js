@@ -15,9 +15,7 @@ export default function (trackId) {
             grant_type: 'authorization_track_id'
         })
         .then(response => {
-            const data = response.data.data;
-            const accessToken = data.token;
-            const refreshToken = data.refresh_token;
+            const { accessToken, refreshToken } = response.data;
 
             Cookies.set(TOKEN_KEYS.access, accessToken, {
                 expires: new Date(
@@ -33,8 +31,5 @@ export default function (trackId) {
                 accessToken,
                 refreshToken
             };
-        })
-        .catch(error => {
-            throw error;
         });
 }
