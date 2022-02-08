@@ -9,7 +9,7 @@ import { TOKEN_KEYS } from '../utils';
  */
 export default function (trackId) {
     return api
-        .post(`${globalConfig.getGatewayURL()}/auth/token`, {
+        .post(`${globalConfig.getGatewayUrl()}/auth/token`, {
             track_id: trackId,
             client_id: globalConfig.getClientId(),
             grant_type: 'authorization_track_id'

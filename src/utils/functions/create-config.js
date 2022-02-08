@@ -1,16 +1,16 @@
 import { GATEWAY_URL } from '../constants';
 
 export default function () {
-    let gatewayURL = GATEWAY_URL;
+    let gatewayUrl = GATEWAY_URL;
     let clientId = 0;
     let responseErrorCb = () => {};
 
-    const getGatewayURL = () => {
-        return gatewayURL;
+    const getGatewayUrl = () => {
+        return gatewayUrl;
     };
 
-    const setGatewayURL = url => {
-        gatewayURL = url;
+    const setGatewayUrl = url => {
+        gatewayUrl = url;
     };
 
     const getClientId = () => {
@@ -30,8 +30,8 @@ export default function () {
     };
 
     return Object.freeze({
-        getGatewayURL,
-        setGatewayURL,
+        getGatewayUrl,
+        setGatewayUrl,
         getClientId,
         setClientId,
         handleErrorResponse,
