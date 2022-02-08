@@ -29,7 +29,7 @@ export default function (payload) {
             });
 
             Cookies.set(TOKEN_KEYS.refresh, refreshToken, {
-                expires: 7
+                expires: 60
             });
 
             return {
