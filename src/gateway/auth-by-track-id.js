@@ -1,20 +1,17 @@
 import Cookies from 'js-cookie';
 import { api } from '../api';
-import { GATEWAY_URL, TOKEN_KEYS } from '../utils';
+import { globalConfig } from '../core';
+import { TOKEN_KEYS } from '../utils';
 
 /**
  * Авторизация с помощью track id
- * @param {string} payload.trackId
- * @param {string} payload.baseUrl
- * @param {number} payload.clientId
+ * @param {string} trackId
  */
-export default function (payload) {
-    const url = payload.baseUrl || GATEWAY_URL;
-
+export default function (trackId) {
     return api
-        .post(`${url}/auth/token`, {
-            track_id: payload.trackId,
-            client_id: payload.clientId,
+        .post(`${globalConfig.getGatewayURL()}/auth/token`, {
+            track_id: trackId,
+            client_id: globalConfig.getClientId(),
             grant_type: 'authorization_track_id'
         })
         .then(response => {

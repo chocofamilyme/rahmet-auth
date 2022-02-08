@@ -1,5 +1,5 @@
 import Cookies from 'js-cookie';
-import { TOKEN_KEYS } from '../constants';
+import { TOKEN_KEYS } from '../utils';
 
 /**
  * @returns {string}
