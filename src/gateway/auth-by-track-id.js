@@ -1,6 +1,6 @@
 import Cookies from 'js-cookie';
 import { api } from '../api';
-import { GATEWAY_URL, TOKEN_KEYS } from '../core';
+import { GATEWAY_URL, TOKEN_KEYS } from '../utils';
 
 /**
  * Авторизация с помощью track id

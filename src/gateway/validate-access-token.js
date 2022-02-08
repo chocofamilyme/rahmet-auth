@@ -1,5 +1,6 @@
 import { api } from '../api';
-import { GATEWAY_URL, getAccessToken } from '../core';
+import { getAccessToken } from '../core';
+import { GATEWAY_URL } from '../utils';
 
 /**
  * Валидация токена
