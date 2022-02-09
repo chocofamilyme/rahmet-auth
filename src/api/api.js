@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { stringify } from 'qs';
-import { globalConfig } from '../core';
 
 const api = axios.create({
     paramsSerializer: stringify,
@@ -18,12 +17,7 @@ api.interceptors.request.use(
 api.interceptors.response.use(
     response => {
         const data = response.data;
-
-        if (data.error_code) {
-            return Promise.reject(globalConfig.handleErrorResponse(response));
-        }
-
-        return data;
+        return data.error_code ? Promise.reject(data) : response;
     },
     error => Promise.reject(error)
 );
