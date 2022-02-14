@@ -8,7 +8,7 @@ import { saveAuthData } from '../../utils';
  */
 export default function (trackId) {
     return api
-        .post(`${globalConfig.getGatewayUrl()}/auth/token`, {
+        .post(`${globalConfig.getBaseUrl()}/auth/token`, {
             track_id: trackId,
             client_id: globalConfig.getClientId(),
             grant_type: 'authorization_track_id'
