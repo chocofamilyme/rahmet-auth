@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { stringify } from 'qs';
+import { v4 as uuidv4 } from 'uuid';
 
 /**
  * Создание Axios instance по умолчанию
@@ -13,6 +14,7 @@ export default function () {
     client.interceptors.request.use(
         config => {
             config.headers['Content-Type'] = 'application/json';
+            config.headers['X-Idempotency-key'] = uuidv4();
             return config;
         },
         error => Promise.reject(error)
