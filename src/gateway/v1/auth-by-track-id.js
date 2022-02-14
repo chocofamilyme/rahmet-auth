@@ -1,6 +1,6 @@
-import { api } from '../api';
-import { globalConfig } from '../core';
-import { saveAuthData } from '../utils';
+import { api } from '../../api';
+import { globalConfig } from '../../core';
+import { saveAuthData } from '../../utils';
 
 /**
  * Авторизация с помощью track id
