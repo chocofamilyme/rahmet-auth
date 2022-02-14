@@ -1,4 +1,3 @@
-import { api } from '../../api';
 import { globalConfig } from '../../core';
 import { saveAuthData } from '../../utils';
 
@@ -7,7 +6,8 @@ import { saveAuthData } from '../../utils';
  * @param {string} trackId
  */
 export default function (trackId) {
-    return api
+    return globalConfig
+        .getHttpClient()
         .post(`${globalConfig.getBaseUrl()}/auth/token`, {
             track_id: trackId,
             client_id: globalConfig.getClientId(),
