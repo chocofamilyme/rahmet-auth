@@ -1,5 +1,5 @@
 import { globalConfig } from '../../core';
-import { saveAuthData } from '../../utils';
+import { AUTH_TYPES, saveAuthData } from '../../utils';
 
 /**
  * Авторизация с помощью track id
@@ -11,7 +11,7 @@ export default function (trackId) {
         .post(`${globalConfig.getBaseUrl()}/auth/token`, {
             track_id: trackId,
             client_id: globalConfig.getClientId(),
-            grant_type: 'authorization_track_id'
+            grant_type: AUTH_TYPES.trackId
         })
         .then(({ data }) =>
             saveAuthData(data.token, data.refresh_token, data.expire_in)
