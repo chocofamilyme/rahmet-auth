@@ -1,1 +1,5 @@
-export { default as authByTrackId } from './auth-by-track-id';
+import authByTrackId from './auth-by-track-id';
+
+export default {
+    authByTrackId
+};
