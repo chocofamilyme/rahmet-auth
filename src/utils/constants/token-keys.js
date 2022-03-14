@@ -1,4 +1,5 @@
 export default {
     access: 'accessToken',
-    refresh: 'refreshToken'
+    refresh: 'refreshToken',
+    fingerPrint: 'fingerPrint'
 };
